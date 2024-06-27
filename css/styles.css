@@ -1,0 +1,232 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "connect main-content main-content"
+        "connect projects presentations"
+        "footer footer footer";
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 1em;
+    min-height: 100vh;
+    padding: 1em;
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    max-height: 50px;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #eee;
+    padding: 1em;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 1em;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-content {
+    grid-area: main-content;
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+}
+
+.services {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.service-item {
+    background-color: #f0f0f0;
+    padding: 1em;
+    text-align: center;
+    border: 1px solid #ddd;
+    flex: 1;
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.service-item p {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.projects {
+    grid-area: projects;
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1em;
+}
+
+.project-item {
+    background-color: #f0f0f0;
+    padding: 1em;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.project-item p {
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+.presentations {
+    grid-area: presentations;
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+}
+
+.presentation-item {
+    background-color: #f0f0f0;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.connect {
+    grid-area: connect;
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.connect h2 {
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 1em;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 2em;
+    transition: color 0.3s;
+}
+
+.social-icons a.facebook:hover {
+    color: #3b5998;
+}
+
+.social-icons a.pinterest:hover {
+    color: #bd081c;
+}
+
+social-icons a.linkedin:hover {
+    color: #0077b5;
+}
+
+.social-icons a.gmail:hover {
+    color: #ea4335;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "main-content"
+            "projects"
+            "presentations"
+            "connect"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .projects, .services {
+        grid-template-columns: 1fr;
+    }
+}
